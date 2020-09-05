@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 1;
+        var b = a-- + --a; //结果为0,首先直接--a得到0然后0+0(即a--优先级较高大于+)
+        document.write(b);
+        var c = NaN == NaN; //结果未false NaN不等于任何数包括他自己
+        document.write(c);
+    </script>
+</body>
+
+</html>
