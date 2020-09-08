@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sum(a, b, c) {
+            console.log(arguments); //输出所有传入的实参,例如按如下方法调用则输出[1,2,3,4,5]
+            console.log(sum.length); //输出形参个数
+        }
+        sum(1, 2, 3, 4, 5);
+        // 定义函数的多种方法
+        function fuc() {}
+        var test = function tests() {}; //虽然调用时使用test()但该函数的真正名称为tests调用test.name输出函数名称时为tests
+        var test1 = function() {};
+        document.write(fuc.name);
+        document.write(test.name);
+        document.write(test1.name);
+    </script>
+</body>
+
+</html>
