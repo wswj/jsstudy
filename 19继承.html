@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Script>
+        // 继承1   即将一个原型赋值给另一个原型 但是此种方法改变一个原型会影响到另一个原型
+        Father.prototype.lastNameplates = "wswj";
+
+        function Father() {}
+
+        function Song() {}
+        //圣杯模式继承
+        function inherit(Target, Origin) {
+            function F() {}
+            F.prototype = Origin.prototype;
+            Target.prototype = new F();
+            //重置构造函数(因为直接继承原型会改变constuctor)
+            Target.prototype.constuctor = Target;
+            //继承的真正类(作为一个属性添加用来记录真正继承的类)
+            Target.prototype.uber = Origin.prototype;
+        }
+        inherit(Song, Father);
+        var song = new Song();
+    </Script>
+    <script>
+        var inherit = (function() {
+            //相当于私有化变量(形成了闭包,其他函数无法使用,要想改变F则需要在返回的函数中设置方法来改变他)
+            var F = function() {};
+            return function() {
+                F.prototype = Origin.prototype;
+                Target.prototype = new F();
+                //重置构造函数(因为直接继承原型会改变constuctor)
+                Target.prototype.constuctor = Target;
+                //继承的真正类(作为一个属性添加)
+                Target.prototype.uber = Origin.prototype;
+            }
+        }());
+    </script>
+</body>
+
+</html>

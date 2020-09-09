@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var person = new Person("deng", 10);
+        var obj = {};
+        // 如下call方法第一步让this指向obj,剩下的两个为实际传入的参数,最终结果为obj对象{name:"wswj",age:100}
+        Person.call(obj, "wswj", 100);
+    </script>
+</body>
+
+</html>

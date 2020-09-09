@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Grand.prototype最终指向Object.prototype
+        Grand.prototype.lastName = "Deng";
+
+        function Grand() {}
+        var grand = new Grand();
+        Father.prototype = grand;
+
+        function Father() {
+            this.name = "xiaoming";
+        }
+        var father = new Father();
+        Song.prototype = father;
+
+        function Song() {
+            this.hobbit = "smoke";
+        }
+        var son = new Son();
+    </script>
+</body>
+
+</html>

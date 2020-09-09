@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 谁调用方法this就指向谁
+        Person.prototype = {
+            name: "a",
+            sayName: function() {
+                console.log(this.name);
+            }
+
+        }
+
+        function Person() {
+            this.name = "b";
+        }
+        var p = new Person();
+        console.log(p.sayName()); //输出b
+        console.log(Person.prototype.sayName()); //输出a
+    </script>
+</body>
+
+</html>

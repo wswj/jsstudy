@@ -11,10 +11,28 @@
     <script>
         // Person.prototype ===>原型(是对象)
         // Person.prototype={} ====>是祖先
-        Person.prototype.name = "wswj";
+
+        //Person.prototype.name = "wswj";
+        Person.prototype = {
+            name: "wswj",
+            sex: "男",
+            //constructor: Car
+        }
 
         function Person() {}
-        alert(new Person().name);
+        var car = {
+            carname: "car"
+        }
+        var p = new Person();
+        console.log(p);
+        //改变p的原型指向car而非原来的Person
+        p.__proto__ = car;
+        console.log(p.carname);
+
+
+
+
+        // constructor为构造函数,__proto__中放的是原型本身
     </script>
 </body>
 
