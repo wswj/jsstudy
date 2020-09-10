@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: "wswj",
+            age: 12,
+            sex: "male",
+            __proto__: {
+                lastName: "pwswj"
+            }
+        }
+        for (var prop in obj) {
+            //会输出undefined(因为obj.prop======>等同于obj['prop']变成取名为prop的属性值,因为obj中没有prop所以输出的为undefined)
+            //console.log(obj.prop);
+            //正常输出想要的属性值
+            console.log(obj[prop]);
+        }
+        //只输出自己本身的属性,不输出原型的属性
+        for (var prop in obj) {
+            //会输出undefined(因为obj.prop======>等同于obj['prop']变成取名为prop的属性值,因为obj中没有prop所以输出的为undefined)
+            //console.log(obj.prop);
+            //正常输出想要的属性值
+            //obj.hasOwnProperty(prop)判断自身是否有某个属性如果有返回true,如果没有返回false
+            if (obj.hasOwnProperty(prop)) {
+                console.log(obj[prop]);
+            }
+        }
+    </script>
+</body>
+
+</html>
