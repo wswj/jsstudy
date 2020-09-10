@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 深度复制
+        var obj = {
+            name: "adc",
+            age: 123,
+            card: ['visa', 'master'],
+            wife: {
+                name: 'bcd',
+                son: {
+                    name: "aaa"
+                }
+            }
+        }
+        var obj1 = {}
+
+        function deepClone(origin, target) {
+            var target = target || {},
+                toStr = Object.prototype.toString,
+                arrStr = "[object Array]";
+            for (var prop in origin) {
+                if (origin.hasOwnProperty(prop)) {
+                    if (origin[prop] !== "null" && typeof(origin[prop]) == "object") {
+                        if (toStr.toString == arrStr) {
+                            target[prop] = [];
+                        } else {
+                            target[prop] = {};
+                        }
+                        deepClone(origin[prop], target[prop])
+                    } else {
+                        target[prop] = origin[prop];
+                    }
+                }
+            }
+            return target;
+        }
+    </script>
+</body>
+
+</html>
