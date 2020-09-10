@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 35, 4, 10];
+        //1 必须写两个形参
+        //2 看返回值1)当返回值为负时那么前面的数放前面
+        //         2)为正数,那么后面的数在前
+        //         3)为0不动
+        arr.sort(
+            function(a, b) {
+                if (a > b) {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+
+        );
+    </script>
+    <script>
+        //让一个有序数组乱序排序
+        var arr2 = [1, 2, 3, 4, 5, 6];
+        arr.sort(function(a, b) {
+            return Math.random() - 0.5;
+        });
+    </script>
+    <script>
+        //比较对象
+        var obj = {
+            name: "wswj",
+            age: 10
+        }
+        var obj1 = {
+            name: "ws",
+            age: 20
+        }
+        var arr3 = [obj, obj1];
+        arr.sort(function(a, b) {
+            return a.age - b.age
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            "0": "a",
+            "1": "b",
+            "length": 2,
+            "push": Array.prototype.push,
+            "pop": Array.prototype.pop
+        }
+        obj.push("c");
+        var obj1 = {
+            "1": "a",
+            "2": "b",
+            "length": 2,
+            "push": Array.prototype.push,
+            "pop": Array.prototype.pop
+        }
+        obj.push("c"); //得到的obj1为(原因是下面的push方法原理)
+        // var obj1 = {
+        //     "1": "a",
+        //     "2": "c",
+        //     "length": 2,
+        //     "push": Array.prototype.push,
+        //     "pop": Array.prototype.pop
+        // }
+        //属性要为索引(数字)属性,必须有length属性,最好加上push
+        //好处
+        //push方法原理
+        // Array.prototype.push = function(target) {
+        //     obj[obj.length] = target;
+        //     obj.length++;
+        // }
+    </script>
+</body>
+
+</html>

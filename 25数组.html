@@ -11,6 +11,17 @@
     <script>
         //改变原数组
         //push,pop,shift,unshift,sort,reverse,splice
+        //splice(从第几位开始,截取多少的长度,在切口处添加新的数据)
+        var arr = [1, 2, 3, 4];
+        arr.splice(0, 2);
+        console.log(arr); //输出[3,4]
+        arr.splice(0, 2, 3, 3, 3, 3);
+        console.log(arr); //输出[3,3,3,3]因为上一个截取后只剩下[3,4]
+        var arr1 = [1, 2, 3, 5];
+        arr1.splice(3, 0, 4); //结果为arr1[1,2,3,4,5]
+        console.log(arr1.splice(-1, 1)); //从倒数第一位开始截取1个
+        var arr2 = [1, 2];
+        console.log(arr2.splice(1, 1));
         //不改变原数组
         //concat,join-->split,tostring,slice
     </script>
