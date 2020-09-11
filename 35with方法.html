@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var org = {
+                dp1: {
+                    deng: {
+                        name: "deng",
+                        age: 234
+                    },
+                    jc: {
+                        name: "jc",
+                        age: 234
+                    },
+                },
+
+                dp2: {
+
+                }
+            }
+            // with方法可以改变作用域链
+        with(org.dp1.jc) {
+            console.log(name);
+        }
+    </script>
+</body>
+
+</html>
